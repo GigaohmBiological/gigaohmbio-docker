@@ -41,9 +41,25 @@ pipx ensurepath
 twitch-dl --version
 # check ffmpeg, too
 ffmpeg -h
+EOF
+
+RUN <<EOF
+# python?
+which python python3
+EOF
+
+RUN <<EOF
 # check torch versions
 python3 -c 'import torch; print("python torch {0}.format(torch.__version__)'
+EOF
+
+RUN <<EOF
+# check torch versions
 python3 -c 'import torchvision; print("python torchvision {0}.format(torchvision.__version__)'
+EOF
+
+RUN <<EOF
+# check torch versions
 python -c 'import torchaudio; print("python torchaudio {0}.format(torchaudio.__version__)'
 EOF
 
